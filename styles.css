@@ -218,13 +218,33 @@ body{
     margin-top: 20px;
 }
 
-.display input{
+.display .search{
+    margin-bottom: 20px;
+}
+
+.display .search input{
     font-size: 1em;
     padding: 10px 7px;
     border-radius: 10px;
     color: black;
     font-weight: 900;
-    margin-bottom: 15px;
+    width: 65%;
+}
+
+.display .search{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.display .search button{
+    width: 30%;
+    height: 45px;
+    border-radius: 10px;
+    border: none;
+    background: #4ca3d9;
+    color: white;
+    font-size: 1em;
 }
 
 .display .description{
