@@ -8,6 +8,7 @@ const searchBtn = document.getElementById('search-btn');
 const insideScreen = document.getElementById('inside-screen');
 const rightSector = document.getElementById('right-sector');
 const yellowTriangle = document.getElementById('yellow-triangle');
+const circularButton = document.getElementById('circular-button');
 
 // Escucha el evento 'keydown' en el input
 inputField.addEventListener('keydown', (event) => {
@@ -26,6 +27,16 @@ function openPokedex() {
         rightSector.classList.remove('right-sector-closed');
         yellowTriangle.style.display = 'none';
     }
+}
+
+function powerOff() {
+    // Limpiar los campos si ocurre un error
+    nameField.textContent = 'Busca tu Pokémon!';
+    heightField.textContent = '';
+    weightField.textContent = '';
+    typeField.textContent = '';
+    imageField.style.display = 'none';
+    insideScreen.style.background = '#232323';
 }
 
 searchBtn.addEventListener('click', () => {
