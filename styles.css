@@ -126,7 +126,7 @@
 }
 
 .screen .inside-screen{
-    background-color: #8db9dc;
+    background-color: #232323;
     content: "";
     width: 85%;
     height: 200px;
@@ -267,6 +267,19 @@
 .right-sector{
     border-radius: 0 0 10px 0;
     border-left: 2px solid #b9101e;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    padding: 0 0 0 5px;
+}
+
+.right-sector .yellow-triangle{
+    width: 0;
+    height: 0;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-left: 19px solid #fdc300; /* Color del triángulo */
+    margin-top: 60px;
 }
 
 .right-sector::after{
@@ -278,6 +291,16 @@
     top: 0;
     left: 0;
     background-color: #222842;
+}
+
+.right-sector-closed::after{
+    content: "";
+    position: absolute;
+    width: 420px;
+    height: 65px;
+    top: 0;
+    left: 0;
+    background-color: #dc0a2d;
 }
 
 p.copyright{

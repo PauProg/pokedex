@@ -5,6 +5,9 @@ const weightField = document.getElementById('pokemon-weight');
 const typeField = document.getElementById('pokemon-type');
 const inputField = document.getElementById('input-field');
 const searchBtn = document.getElementById('search-btn');
+const insideScreen = document.getElementById('inside-screen');
+const rightSector = document.getElementById('right-sector');
+const yellowTriangle = document.getElementById('yellow-triangle');
 
 // Escucha el evento 'keydown' en el input
 inputField.addEventListener('keydown', (event) => {
@@ -12,6 +15,18 @@ inputField.addEventListener('keydown', (event) => {
         searchBtn.click(); // Simula un clic en el botón
     }
 });
+
+function openPokedex() {
+    if (rightSector.style.position === 'relative') {
+        rightSector.style.position = 'absolute';
+        rightSector.classList.add('right-sector-closed');
+        yellowTriangle.style.display = 'block';
+    } else {
+        rightSector.style.position = 'relative';
+        rightSector.classList.remove('right-sector-closed');
+        yellowTriangle.style.display = 'none';
+    }
+}
 
 searchBtn.addEventListener('click', () => {
     const pokemonName = inputField.value.toLowerCase().trim();
@@ -34,6 +49,7 @@ searchBtn.addEventListener('click', () => {
             imageField.alt = data.name;
             imageField.style.display = 'block';
             imageField.src = data.sprites.front_default;
+            insideScreen.style.background = '#8db9dc';
         })
         .catch(error => {
             console.error('Error:', error);
@@ -44,5 +60,6 @@ searchBtn.addEventListener('click', () => {
             weightField.textContent = '';
             typeField.textContent = '';
             imageField.style.display = 'none';
+            insideScreen.style.background = '#232323';
         });
 });
